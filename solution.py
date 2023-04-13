@@ -5,6 +5,6 @@ import statsmodels.stats.weightstats as w
 chat_id = 299666468 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    _, pvalue = w.ztest(x, value=500, alternative='larger')
+    _, pvalue = w.ttest_ind(x, y, alternative='larger')
 
     return pvalue <= 0.07
